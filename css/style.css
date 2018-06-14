@@ -1,12 +1,36 @@
+html {
+    background: #c9c8c8;
+    scroll-behavior: smooth !important;
+}
+
 body {
    /* display: flex;
     flex-direction: column;
     align-items: center; */
     margin: 0px;
+    padding-bottom: 20px;
 }
 
 .grid {
     position: relative;
+    display: grid;
+    background: rgb(201, 200, 200);
+    /* grid-template-columns: auto auto auto; */
+    grid-template-areas:
+    'navbar navbar navbar navbar navbar navbar'
+    'header header header header header header'
+    'buttons title title title title title'
+    'color title title title title title'
+    'input input input input input input'
+    'cards cards cards cards cards cards'
+    'icons icons icons icons icons icons';
+    /* padding: 10px; */
+}
+
+.grid-item {
+    background-color: white;
+    padding: 20px;
+    margin: 0px 20px;
 }
 
 a {
@@ -58,47 +82,17 @@ input {
     background: rgb(168, 219, 107);
 }
 
-
-
 /* NAVBAR */
-    .header { 
-        display: grid;
-        grid-template-areas: 
-        'navbar'
-        'searchbar'
-        'featured';
-        /* grid-template-columns: auto auto 220px; */
-        grid-area: header;
-    }
-
-    .searchbar {
-        display: none;
-        grid-area: searchbar;
-        background-color: #808080;
-        height: 50px;
-        margin: 0px 10px 0px 10px;
-        border: none;
-        outline: none;
-        padding: 20px;
-        font-size: 1rem;
-        color: white;
-        font-family: 'Roboto Slab', serif;
-    }
-
-    .searchbar::-webkit-input-placeholder {
-        color: rgba(255, 255, 255, 0.575);
-    }
-
-    .searbar_toggle {
-        cursor: pointer;
+    .header {
+        
     }
     /* ------------------------------------------------- */
 
     .featured {
         position: relative;
-        grid-area: featured;
+        grid-area: header;
         height: 600px;
-        margin: 0px 10px;
+        margin: 0px 20px;
         background-image: url(../images/panic_at_the_disco2.jpg);
         background-size: cover;
         background-position: center;
@@ -108,7 +102,6 @@ input {
         display: grid;
         position: absolute;
         bottom: 0px;
-        width: 100%;
         padding: 20px;
         padding-left: 40px; 
         background-color: #a9db6b00;
@@ -155,17 +148,24 @@ input {
         display: grid;
         position: sticky;
         top: 0px;
-        grid-template-areas: 
-        'navbar_logo navbar_links navbar_account';
-        grid-template-columns: auto auto 220px;
         grid-area: navbar;
+        grid-template-areas: 
+        'navbar_logo navbar_links navbar_account'
+        'searchbar searchbar searchbar';
+        grid-template-columns: auto auto 220px;
         height: fit-content;
         background: white;
-        padding: 0px;
         font-family: 'Montserrat', sans-serif;
-        padding: 0px;
-        margin: 10px 10px 0px 10px;
         z-index: 3;
+        margin: 0px 20px 0px 20px;
+        border-top: 20px solid #c9c8c8;
+        transition: ease-in-out 0.17s;
+    }
+
+    .scrolled {
+        margin: 0px;
+        /* box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.47); */
+        transition: ease-in-out 0.17s;
     }
 
     .navbar div {
@@ -178,7 +178,7 @@ input {
         align-self: center;
         margin-left: 9px;
         padding-right: 10px;
-        border-right: 1px solid black;
+        border-right: px solid black;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 1.2rem;
@@ -200,6 +200,7 @@ input {
 
     .navbar_logo {
         padding: 20px;
+        align-self: center;
     }
 
     .navbar_links {
@@ -226,6 +227,40 @@ input {
         border-radius: 100%;
         background-size: cover;
         border: 1px solid black;
+    }
+    
+    .searchbar {
+        display: none;
+        position: absolute;
+        bottom: -50px;
+        grid-area: searchbar;
+        background-color: #808080;
+        height: 50px;
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 20px;
+        font-size: 1rem;
+        color: white;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    .searchbar::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.575);
+    }
+
+    .searbar_toggle {
+        cursor: pointer;
+    }
+
+    .searchbar_filter {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 200px;
+        width: 200px;
+        filter: blur(10px);
+        background-color: #a9db6b05;
     }
 
 /* CONTENT */ 
@@ -447,26 +482,6 @@ input {
 /* HEADERS */
 
 /* ____________________________________________________ */
-
-.grid {
-    display: grid;
-    background: rgb(201, 200, 200);
-    /* grid-template-columns: auto auto auto; */
-    grid-template-areas:
-    'header header header header header header'
-    'buttons title title title title title'
-    'color title title title title title'
-    'input input input input input input'
-    'cards cards cards cards cards cards'
-    'icons icons icons icons icons icons';
-    padding: 10px;
-}
-
-.grid-item {
-    background-color: white;
-    padding: 20px;
-    margin: 0px 10px;
-}
 
 .item_title {
     font-family: 'Montserrat', sans-serif;

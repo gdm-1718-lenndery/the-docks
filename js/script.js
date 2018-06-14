@@ -37,3 +37,7 @@ function favSelect() {
         this.style.fill = "#df0000";
     }
 }
+
+/* NAVBAR SCROLL-WIDTH */
+
+header.style.transition = "all 0.2s";
