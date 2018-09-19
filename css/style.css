@@ -93,9 +93,11 @@ input {
         grid-area: header;
         height: 600px;
         margin: 0px 20px;
+        background-color: white;
         background-image: url(../images/panic_at_the_disco2.jpg);
         background-size: cover;
         background-position: center;
+        background-attachment: fixed;
     }
 
     .featured_info {
